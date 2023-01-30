@@ -1,0 +1,58 @@
+// /*-- scss:defaults --*/
+
+// $body-bg: #191919;
+// $body-color: #fff;
+// $link-color: #42affa;
+
+/*-- scss:rules --*/
+
+// .reveal .slide blockquote {
+//   border-left: 3px solid $text-muted;
+//   padding-left: 0.5em;
+// }
+
+.reveal section {
+    border: 2px solid red
+  }
+
+.reveal .slides ul ul {
+    list-style-type: circle;
+    font-size: 85%;
+}
+
+.reveal .slides figcaption {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.reveal .slides h2 {
+    margin: 30px;
+    text-align: center;
+  }
+
+.reveal .slides .important {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bolder;
+}
+
+.reveal .slides .small {
+    font-size: smaller;
+}
+
+.reveal .slides .boxed {
+    border: 2px solid red;
+    padding: 20px;
+}
+
+.reveal .slides div.centered-block {
+    display: flex;
+    justify-content: center;
+}
+
+
+.reveal .slides .callout {
+    max-width: 75%;
+    margin: 20px;
+}
+
