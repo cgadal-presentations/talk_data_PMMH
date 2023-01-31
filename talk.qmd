@@ -143,9 +143,9 @@ Processing step:
 ## Two global repositories
 
 ::: {layout-ncol=2 layout-valign="bottom"}
-![<a href="https://www.earthdata.nasa.gov/"> NASA (US)</a>](src/EARTH_DATA_LOGO.png){width=600}
+![<a href="https://www.earthdata.nasa.gov/" target="_blank"> NASA (US)</a>](src/EARTH_DATA_LOGO.png){width=600}
 
-![<a href="https://www.copernicus.eu/en"> Copernicus (EU)</a>](src/copernicus_logo.png){width=600}
+![<a href="https://www.copernicus.eu/en" target="_blank"> Copernicus (EU)</a>](src/copernicus_logo.png){width=600}
 :::
 
 
@@ -234,7 +234,7 @@ Processing step:
     - depend on the place
     - systematic bias, always positive on forested areas
     - $\sim 10~\textrm{m}$
-- easy access: [EarthData](https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&pg[0][v]=f&pg[0][gsk]=-start_date&q=SRTM&tl=1675071224.862!3!!) or [Map dowload](https://dwtkns.com/srtm30m/)
+- easy access: [EarthData](https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&pg[0][v]=f&pg[0][gsk]=-start_date&q=SRTM&tl=1675071224.862!3!!){target="_blank"} or [Map dowload](https://dwtkns.com/srtm30m/){target="_blank"}
 :::
 :::
 
@@ -247,7 +247,7 @@ Processing step:
 ## Formats: .hgt or NETCDF
 
 - .hgt: specific to SRTM mission
-    - not a format, just an extension (see [here](https://www2.jpl.nasa.gov/srtm/faq.html))
+    - not a format, just an extension (see [here](https://www2.jpl.nasa.gov/srtm/faq.html){target="_blank"})
     - "raw" format (no headers and not compressed)
     - no metadata included
 
@@ -267,7 +267,7 @@ Processing step:
 - released in 2020
 - less holes in dataset, less vertical error
 - more extensive (spatial vertical precision, calculation of slope/curvature)
-- access: [EarthData](https://search.earthdata.nasa.gov/search?q=NASADEM) 
+- access: [EarthData](https://search.earthdata.nasa.gov/search?q=NASADEM){target="_blank"} 
 
 :::
 :::
@@ -280,8 +280,8 @@ Processing step:
 
 ::: {.container-hv-center}
 
-- [get data](https://search.earthdata.nasa.gov/search?q=SRTM)
-- [see notebook](http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb) (must start `jupyter-notebook` to open)
+- [get data](https://search.earthdata.nasa.gov/search?q=SRTM){target="_blank"}
+- [see notebook](http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb){target="_blank"} (must start `jupyter-notebook` to open)
 :::
 
 ## Meteorological data
