@@ -11,9 +11,9 @@
 //   padding-left: 0.5em;
 // }
 
-.reveal section {
-    border: 2px solid red
-  }
+// .reveal section {
+//     border: 2px solid red
+//   }
 
 .reveal .slides ul ul {
     list-style-type: circle;
@@ -50,9 +50,11 @@
     justify-content: center;
 }
 
-
-.reveal .slides .callout {
-    max-width: 75%;
-    margin: 20px;
+.container-hv-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
-

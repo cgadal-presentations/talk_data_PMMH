@@ -623,7 +623,8 @@ Current weather over France (ECMWF forecast).
 </section>
 <section id="topographical-data" class="slide level2">
 <h2>Topographical data</h2>
-<!-- ::::{.centered-block} -->
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="callout callout-note no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -631,24 +632,25 @@ Current weather over France (ECMWF forecast).
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Elevation data as <span class="math inline">\(Z(x, y)\)</span>, <span class="math inline">\(Z(lat, lon)\)</span>, etc..</p></li>
-<li><p>Not <strong>necessarily</strong> (numerical) models !</p></li>
-<li><p>Not cloud points (already ‘interpolated’)</p></li>
+<li>Elevation data as <span class="math inline">\(Z(x, y)\)</span>, <span class="math inline">\(Z(lat, lon)\)</span>, etc..</li>
+<li>Not <strong>necessarily</strong> (numerical) models !</li>
+<li>Not cloud points (already ‘interpolated’)</li>
 </ul>
 </div>
 </div>
 </div>
-<!-- :::: -->
-<div class="columns">
-<div class="column" style="width:50%;">
-<h4 style="text-align:center; margin: 30px">
-Best global coverage: SRTM
-</h4>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Best global coverage: SRTM</strong></p>
+</div>
+<div class="callout-content">
 <ul>
 <li>Shuttle Radar Topography Mission</li>
 <li>horizontal resolution: <span class="math inline">\(1'' \sim 30~\textrm{m}\)</span></li>
 <li>only land</li>
-<li>vertical error, complicated:
+<li>vertical precision, complicated:
 <ul>
 <li>depend on the place</li>
 <li>systematic bias, always positive on forested areas</li>
@@ -656,15 +658,71 @@ Best global coverage: SRTM
 </ul></li>
 <li>easy access: <a href="https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&amp;pg%5B0%5D%5Bv%5D=f&amp;pg%5B0%5D%5Bgsk%5D=-start_date&amp;q=SRTM&amp;tl=1675071224.862!3!!">EarthData</a> or <a href="https://dwtkns.com/srtm30m/">Map dowload</a></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<h4 style="text-align:center; margin: 30px">
-Global coverage
-</h4>
 </div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Formats: .hgt or NETCDF</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>.hgt: specific to SRTM mission
+<ul>
+<li>not a format, just an extension (see <a href="https://www2.jpl.nasa.gov/srtm/faq.html">here</a>)</li>
+<li>“raw” format (no headers and not compressed)</li>
+<li>no metadata included</li>
+</ul></li>
+<li>NETCDF (.nc): Network Common Data Form
+<ul>
+<li>open format</li>
+<li>binary (can be compressed)</li>
+<li>self-describing (include metadata)</li>
+<li>not always available yet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>successor: NASADEM</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>released in 2020</li>
+<li>less holes in dataset, less vertical error</li>
+<li>more extensive (spatial vertical precision, calculation of slope/curvature)</li>
+<li>access: <a href="https://search.earthdata.nasa.gov/search?q=NASADEM">EarthData</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="topographical-data-an-example" class="slide level2">
+<h2>Topographical data: an example</h2>
+<div class="container-hv-center">
+<ul>
+<li><a href="https://search.earthdata.nasa.gov/search?q=SRTM">get data</a></li>
+<li><a href="http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb">see notebook</a> (must start <code>jupyter-notebook</code> to open)</li>
+</ul>
 </div>
 </section>
 <section id="meteorological-data" class="slide level2">
 <h2>Meteorological data</h2>
+</section>
+<section id="meteorological-data-an-example" class="slide level2">
+<h2>Meteorological data: an example</h2>
 <div class="footer footer-default">
 
 </div>

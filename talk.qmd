@@ -12,6 +12,8 @@ format:
     slide-number: true
     template-partials:
       - title-slide.html
+extra_javascript:
+    - https://pyscript.net/latest/pyscript.js
 ---
 
 ## About me
@@ -205,44 +207,83 @@ Processing step:
 :::
 ::::
 
-## Topographical data
+## Topographical data 
 
-<!-- ::::{.centered-block} -->
+:::: {.columns}
+
+::: {.column width=50%}
+
 :::{.callout-note}
 ## Digitial Elevation Models (DEMs)
 
 - Elevation data as $Z(x, y)$, $Z(lat, lon)$, etc..
-
 - Not **necessarily** (numerical) models !
 - Not cloud points (already 'interpolated')
 
 :::
-<!-- :::: -->
 
-:::: {.columns}
-::: {.column width=50%}
 
-<h4 style="text-align:center; margin: 30px"> Best global coverage: SRTM </h4>
+::: {.fragment}
+:::{.callout-note}
 
+## Best global coverage: SRTM
 - Shuttle Radar Topography Mission
 - horizontal resolution: $1'' \sim  30~\textrm{m}$
 - only land
-- vertical error, complicated:
+- vertical precision, complicated:
     - depend on the place
     - systematic bias, always positive on forested areas
     - $\sim 10~\textrm{m}$
 - easy access: [EarthData](https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&pg[0][v]=f&pg[0][gsk]=-start_date&q=SRTM&tl=1675071224.862!3!!) or [Map dowload](https://dwtkns.com/srtm30m/)
-
+:::
+:::
 
 :::
 
 ::: {.column width=50%}
 
-<h4 style="text-align:center; margin: 30px"> Global coverage </h4>
+::: {.fragment}
+:::{.callout-caution}
+## Formats: .hgt or NETCDF
 
+- .hgt: specific to SRTM mission
+    - not a format, just an extension (see [here](https://www2.jpl.nasa.gov/srtm/faq.html))
+    - "raw" format (no headers and not compressed)
+    - no metadata included
 
+- NETCDF (.nc): Network Common Data Form
+    - open format
+    - binary (can be compressed)
+    - self-describing (include metadata)
+    - not always available yet
+
+:::
+:::
+
+::: {.fragment}
+:::{.callout-tip}
+## successor: NASADEM
+
+- released in 2020
+- less holes in dataset, less vertical error
+- more extensive (spatial vertical precision, calculation of slope/curvature)
+- access: [EarthData](https://search.earthdata.nasa.gov/search?q=NASADEM) 
+
+:::
+:::
 :::
 ::::
 
 
+## Topographical data: an example
+
+
+::: {.container-hv-center}
+
+- [get data](https://search.earthdata.nasa.gov/search?q=SRTM)
+- [see notebook](http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb) (must start `jupyter-notebook` to open)
+:::
+
 ## Meteorological data
+
+## Meteorological data: an example
