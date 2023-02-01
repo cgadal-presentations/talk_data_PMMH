@@ -625,27 +625,60 @@ Current weather over France (ECMWF forecast).
 <h2>Topographical data</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="src/zion_DEM2.jpg" style="width:100.0%" height="600"></p>
+<p></p><figcaption>Lidar-derived <strong>Digital Elevation Model</strong> over Zion National Park, Utah (USGS)</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
 <div class="callout callout-note no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Digitial Elevation Models (DEMs)</strong></p>
+<p><strong>DEMs: Digital Elevation Models</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Elevation data as <span class="math inline">\(Z(x, y)\)</span>, <span class="math inline">\(Z(lat, lon)\)</span>, etc..</li>
-<li>Not <strong>necessarily</strong> (numerical) models !</li>
-<li>Not cloud points (already ‘interpolated’)</li>
+<li>Gridded elevation data as <span class="math inline">\(Z(x, y)\)</span>, <span class="math inline">\(Z(lat, lon)\)</span>, etc.. <!-- - Not **necessarily** models ! --></li>
+<li>Not cloud points (already ‘interpolated/gridded’)</li>
+<li>Not Discret Element Method :)</li>
 </ul>
 </div>
 </div>
 </div>
+</div>
 <div class="fragment">
+<div class="callout callout-warning no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Different origins (linked to spatial scale/resolution)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Satellite data</li>
+<li>LIDAR-derived data (plane, drone, hand instruments)</li>
+<li><em>Hand</em> measurements (Theodolite, GPS, photogrammetry, …)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="topographical-data-1" class="slide level2">
+<h2>Topographical data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="callout callout-note no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <p><strong>Best global coverage: SRTM</strong></p>
 </div>
 <div class="callout-content">
+<div class="columns">
+<div class="column" style="width:70%;">
 <ul>
 <li>Shuttle Radar Topography Mission</li>
 <li>horizontal resolution: <span class="math inline">\(1'' \sim 30~\textrm{m}\)</span></li>
@@ -658,33 +691,14 @@ Current weather over France (ECMWF forecast).
 </ul></li>
 <li>easy access: <a href="https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&amp;pg%5B0%5D%5Bv%5D=f&amp;pg%5B0%5D%5Bgsk%5D=-start_date&amp;q=SRTM&amp;tl=1675071224.862!3!!" target="_blank">EarthData</a> or <a href="https://dwtkns.com/srtm30m/" target="_blank">Map dowload</a></li>
 </ul>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="src/640px-Shuttle_Radar_Topographic_Mission_(SRTM)_Illustration.jpg" style="width:100.0%"></p>
+<p></p><figcaption>Illustration of the space shutlle Endeavour orbiditng above the Earth (NASA)</figcaption><p></p>
+</figure>
 </div>
 </div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="callout callout-caution no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Formats: .hgt or NETCDF</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>.hgt: specific to SRTM mission
-<ul>
-<li>not a format, just an extension (see <a href="https://www2.jpl.nasa.gov/srtm/faq.html" target="_blank">here</a>)</li>
-<li>“raw” format (no headers and not compressed)</li>
-<li>no metadata included</li>
-</ul></li>
-<li>NETCDF (.nc): Network Common Data Form
-<ul>
-<li>open format</li>
-<li>binary (can be compressed)</li>
-<li>self-describing (include metadata)</li>
-<li>not always available yet</li>
-</ul></li>
-</ul>
 </div>
 </div>
 </div>
@@ -706,6 +720,36 @@ Current weather over France (ECMWF forecast).
 </div>
 </div>
 </div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Formats: .hgt or NETCDF</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>.hgt: specific to SRTM mission
+<ul>
+<li>not a format, just an extension (see <a href="https://www2.jpl.nasa.gov/srtm/faq.html" target="_blank">here</a>)</li>
+<li>“raw” format (no headers and not compressed)</li>
+<li>no metadata included</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>NETCDF (.nc): Network Common Data Form
+<ul>
+<li>open format</li>
+<li>can be compressed, optimized for gridded data</li>
+<li>include metadata</li>
+<li>not always available yet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -720,9 +764,175 @@ Current weather over France (ECMWF forecast).
 </section>
 <section id="meteorological-data" class="slide level2">
 <h2>Meteorological data</h2>
+<div style="max-width: 60%; margin: 0 auto;">
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Different origins</strong></p>
+</div>
+<div class="callout-content">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>In situ observations</li>
+<li>Satellite observations</li>
+<li>model forecasts</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="fragment highlight-red">
+<ul>
+<li>Reanalyses:
+<ul>
+<li>data assimilation + models</li>
+<li>past (+ forecasts)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="nomargin" class="callout callout-note no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Global datasets</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>ERA series (EU):
+<ul>
+<li>latest: ERA5-Land, hourly, 9 km mesh</li>
+</ul></li>
+<li>MERRA series (US):
+<ul>
+<li>latest: MERRA-2, hourly, 30 km mesh</li>
+</ul></li>
+<li>GLDAS (US):
+<ul>
+<li>3 hours, 30 km mesh</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="nomargin" class="callout callout-note no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Local datasets</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>CERRA:
+<ul>
+<li>Europe, 3 hours, 5km mesh</li>
+</ul></li>
+<li>NLDAS:
+<ul>
+<li>USA, 13 km mesh</li>
+</ul></li>
+<li>many others …</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div style="max-width: 70%; margin: 0 auto;">
+<div id="nomargin" class="callout callout-warning no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Formats</strong></p>
+</div>
+<div class="callout-content">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>GRIB:
+<ul>
+<li><strong>NOT</strong> a file format, just a file with GRIB messages</li>
+<li>no metadata included</li>
+<li>often difficult to read (must reshape data, etc ..)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>NETCDF (.nc): Network Common Data Form
+<ul>
+<li>open format</li>
+<li>can be compressed, optimized for gridded data</li>
+<li>include metadata</li>
+<li>not always available yet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li><strong>product</strong> resoltion, not model resolution</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="meteorological-data-an-example" class="slide level2">
 <h2>Meteorological data: an example</h2>
+<div class="container-hv-center">
+<ul>
+<li><a href="https://cds.climate.copernicus.eu/#!/home" target="_blank">get data</a></li>
+<li><a href="http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb" target="_blank">see notebook</a> (must start <code>jupyter-notebook</code> to open)</li>
+</ul>
+</div>
+</section>
+<section id="final-notes" class="slide level2">
+<h2>Final notes</h2>
+<div class="v-center-container">
+<div style="max-width:70%">
+<ul>
+<li>Same principle for other data types</li>
+</ul>
+<div class="callout callout-caution no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<ul>
+<li>protocol depends on repository</li>
+<li>especially true in Europe/Copernicus</li>
+</ul>
+</div>
+</div>
+</div>
+<ul>
+<li>API access available most of time</li>
+<li>many other repositories and models</li>
+</ul>
+<p><br> <br></p>
+<div class="fragment">
+<div class="important boxed">
+<p>Questions, other examples ?</p>
+</div>
+</div>
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>

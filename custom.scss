@@ -58,3 +58,14 @@
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
+
+.v-center-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+#nomargin {
+    margin-top: 0;
+}

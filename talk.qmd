@@ -207,6 +207,47 @@ Processing step:
 :::
 ::::
 
+## Topographical data
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![Lidar-derived **Digital Elevation Model** over Zion National Park, Utah (USGS)](src/zion_DEM2.jpg){width=100% height=600px}
+
+:::
+
+
+::: {.column width="50%"}
+
+::: {.fragment}
+:::{.callout-note}
+## DEMs: Digital Elevation Models
+
+- Gridded elevation data as $Z(x, y)$, $Z(lat, lon)$, etc..
+<!-- - Not **necessarily** models ! -->
+- Not cloud points (already 'interpolated/gridded')
+- Not Discret Element Method :)
+
+:::
+:::
+
+::: {.fragment}
+:::{.callout-warning}
+## Different origins (linked to spatial scale/resolution)
+
+- Satellite data
+- LIDAR-derived data (plane, drone, hand instruments)
+- *Hand* measurements (Theodolite, GPS,  photogrammetry, ...)
+
+:::
+:::
+
+:::
+::::
+
+
+
 ## Topographical data 
 
 :::: {.columns}
@@ -214,19 +255,11 @@ Processing step:
 ::: {.column width=50%}
 
 :::{.callout-note}
-## Digitial Elevation Models (DEMs)
-
-- Elevation data as $Z(x, y)$, $Z(lat, lon)$, etc..
-- Not **necessarily** (numerical) models !
-- Not cloud points (already 'interpolated')
-
-:::
-
-
-::: {.fragment}
-:::{.callout-note}
-
 ## Best global coverage: SRTM
+
+:::: {.columns}
+::: {.column width=70%}
+
 - Shuttle Radar Topography Mission
 - horizontal resolution: $1'' \sim  30~\textrm{m}$
 - only land
@@ -235,6 +268,26 @@ Processing step:
     - systematic bias, always positive on forested areas
     - $\sim 10~\textrm{m}$
 - easy access: [EarthData](https://search.earthdata.nasa.gov/search/granules?p=C1000000240-LPDAAC_ECS&pg[0][v]=f&pg[0][gsk]=-start_date&q=SRTM&tl=1675071224.862!3!!){target="_blank"} or [Map dowload](https://dwtkns.com/srtm30m/){target="_blank"}
+
+:::
+
+::: {.column width=30%}
+
+![Illustration of the space shutlle Endeavour orbiditng above the Earth (NASA)](src/640px-Shuttle_Radar_Topographic_Mission_(SRTM)_Illustration.jpg){width=100%}
+:::
+::::
+
+:::
+
+::: {.fragment}
+:::{.callout-tip}
+## successor: NASADEM
+
+- released in 2020
+- less holes in dataset, less vertical error
+- more extensive (spatial vertical precision, calculation of slope/curvature)
+- access: [EarthData](https://search.earthdata.nasa.gov/search?q=NASADEM){target="_blank"} 
+
 :::
 :::
 
@@ -251,29 +304,19 @@ Processing step:
     - "raw" format (no headers and not compressed)
     - no metadata included
 
+<br>
+
 - NETCDF (.nc): Network Common Data Form
     - open format
-    - binary (can be compressed)
-    - self-describing (include metadata)
+    - can be compressed, optimized for gridded data
+    - include metadata
     - not always available yet
 
 :::
 :::
 
-::: {.fragment}
-:::{.callout-tip}
-## successor: NASADEM
-
-- released in 2020
-- less holes in dataset, less vertical error
-- more extensive (spatial vertical precision, calculation of slope/curvature)
-- access: [EarthData](https://search.earthdata.nasa.gov/search?q=NASADEM){target="_blank"} 
-
-:::
-:::
 :::
 ::::
-
 
 ## Topographical data: an example
 
@@ -286,4 +329,139 @@ Processing step:
 
 ## Meteorological data
 
+:::: {style="max-width: 60%; margin: 0 auto;"}
+
+::: {.callout-tip}
+## Different origins
+
+:::: {.columns}
+
+::: {.column width=50%}
+- In situ observations
+- Satellite observations
+- model forecasts
+:::
+::: {.column width=50%}
+::: {.fragment .highlight-red}
+- Reanalyses: 
+    - data assimilation +  models
+    - past (+ forecasts) 
+:::
+:::
+::::
+
+:::
+::::
+
+
+::: {.fragment}
+:::: {.columns}
+
+::: {.column width=50%}
+
+::: {.callout-note #nomargin}
+## Global datasets
+
+- ERA series (EU):
+    - latest: ERA5-Land, hourly, 9 km mesh
+- MERRA series (US):
+    - latest: MERRA-2, hourly, 30 km mesh
+- GLDAS (US):
+    - 3 hours, 30 km mesh 
+
+:::
+
+:::
+
+::: {.column width=50%}
+
+::: {.callout-note #nomargin}
+## Local datasets
+
+- CERRA: 
+    - Europe, 3 hours, 5km mesh
+- NLDAS: 
+    - USA, 13 km mesh
+- many others ...
+:::
+
+:::
+::::
+:::
+
+::: {.fragment}
+
+:::: {style="max-width: 70%; margin: 0 auto;"}
+
+::: {.callout-warning #nomargin}
+## Formats
+
+:::: {.columns}
+
+::: {.column width=50%}
+- GRIB:
+    - **NOT** a file format,  just a file with GRIB messages
+    - no metadata included
+    - often difficult to read (must reshape data, etc ..)
+:::
+::: {.column width=50%}
+- NETCDF (.nc): Network Common Data Form
+    - open format
+    - can be compressed, optimized for gridded data
+    - include metadata
+    - not always available yet
+:::
+::::
+
+:::
+
+::::
+:::
+
+
+
+
+::: {.notes}
+- **product** resoltion, not model resolution
+:::
+
+
+
+
 ## Meteorological data: an example
+
+::: {.container-hv-center}
+
+- [get data](https://cds.climate.copernicus.eu/#!/home){target="_blank"}
+- [see notebook](http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb){target="_blank"} (must start `jupyter-notebook` to open)
+:::
+
+
+## Final notes
+
+::: {.v-center-container}
+::: {style="max-width:70%"}
+
+- Same principle for other data types
+
+::: {.callout-caution appearance="minimal"}
+
+- protocol depends on repository
+- especially true in Europe/Copernicus
+:::
+
+- API access available most of time
+- many other repositories and models
+
+
+<br>
+<br>
+
+::: {.fragment}
+::: {.important .boxed}
+Questions, other examples ?
+:::
+:::
+
+:::
+:::
