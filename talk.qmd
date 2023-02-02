@@ -28,7 +28,7 @@ extra_javascript:
 
 ## About me
 
-- 2021 -- now: Postodctoral researcher, IMFT, Toulouse
+- 2021 -- now: Postdoctoral researcher, IMFT, Toulouse
     - Particle-laden (turbidity) currents
     - Experimental work
 
@@ -189,18 +189,16 @@ Processing step:
 ![Lidar-derived Digital Elevation Model over Zion National Park, Utah (USGS)](src/zion_DEM2.jpg){width=100% height=600px}
 
 :::
-
-
 ::: {.column width="50%"}
 
 <h4 style="text-align:center; margin: 30px"> Meteorological data </h4>
 
 <figure>
-    <iframe width="100%" height="600px" style="margin-top:12px; margin-bottom:12px"
-    src="https://embed.windy.com/embed2.html?lat=43.596&lon=1.450&detailLat=43.596&detailLon=1.450&width=650&height=450&zoom=5&level=900h&overlay=rain&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
-    frameborder="0"></iframe>
+      <iframe width="100%" height="600px" style="margin-top:12px; margin-bottom:12px"
+        src="https://embed.windy.com/embed2.html?lat=49.038&lon=7.427&detailLat=49.038&detailLon=7.427&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
+        frameborder="0"></iframe>
     
-    <figcaption> Current weather over France (ECMWF forecast).</figcaption>
+    <figcaption> Current wind flow over Europe (ECMWF forecast).</figcaption>
 </figure>
 
 
@@ -209,7 +207,7 @@ Processing step:
 
 ## Topographical data
 
-:::: {.columns}
+:::: {.columns .v-center-container}
 
 ::: {.column width="50%"}
 
@@ -327,6 +325,15 @@ Processing step:
 - [see notebook](http://localhost:8888/notebooks/notebooks/PMMH_talk_data.ipynb){target="_blank"} (must start `jupyter-notebook` to open)
 :::
 
+::: {.notes}
+
+Login EarthData:
+
+    - cyril_gadal_imft
+    - mdp: usual
+
+:::
+
 ## Meteorological data
 
 :::: {style="max-width: 60%; margin: 0 auto;"}
@@ -352,6 +359,16 @@ Processing step:
 
 :::
 ::::
+
+::: {.fragment}
+<center>
+
+<iframe width="60%" height="650px" src="https://climate.copernicus.eu/sites/default/files/2020-01/2019.11.21_ECMWF%20Reanalysis%20video_with%20caption_v4_IOB.mp4" frameborder="0" allowfullscreen></iframe>
+
+</center>
+:::
+
+## Meteorological data: Reanalyses
 
 
 ::: {.fragment}
@@ -379,7 +396,9 @@ Processing step:
 ## Local datasets
 
 - CERRA: 
-    - Europe, 3 hours, 5km mesh
+    - Europe, 3 hours, 5 km mesh
+- CARRA:
+    - Arctic, 3 hours, 3.5 km mesh
 - NLDAS: 
     - USA, 13 km mesh
 - many others ...
