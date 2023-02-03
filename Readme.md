@@ -14,10 +14,7 @@ To download the presentation, you have to first download this repository:
     git clone https://github.com/Cgadal/talk_data_PMMH.git
 ```
 
-- on the repository [page](https://github.com/Cgadal/talk_data_PMMH), go to:
-    - the green button: `<> Code`
-    - Local tab
-    - Download as Zip
+- to download as zip, simply click [here](https://github.com/Cgadal/talk_data_PMMH/archive/refs/heads/main.zip)
 
 Once its downloaded, go to the saved folder on yor computer, and open the file `talk.html` in your favorite browser (usually, double-clicking on it should open it).
 
