@@ -3,7 +3,7 @@
 
 # <h1 style='text-align:center'>Looking at topographical and meteorological data<h1>
 
-# In[9]:
+# In[1]:
 
 
 import os
@@ -27,7 +27,7 @@ from plotly.subplots import make_subplots
 # In[2]:
 
 
-topo_file = "data/N26E006.SRTMGL1_NC.nc"
+topo_file = "data/S26E015.SRTMGL1_NC.nc"
 
 ds = Dataset(topo_file) 
 print(ds)
@@ -41,35 +41,25 @@ print(ds)
 lon, lat, DEM = ds.variables['lon'][:].data, ds.variables['lat'][:].data, ds.variables['SRTMGL1_DEM'][:].data
 
 extent = [lon.min(), lon.max(), lat.min(), lat.max()]
-zoom = [2500, 3000, 1500, 2000] # [left, right, bottom, top]
 ind_transect = 1500
 
 ls = LightSource(270, 45)
 rgb = ls.shade(DEM, cmap=cm.gist_earth, vert_exag=0.1, blend_mode='soft')
 
-fig, axarr  = plt.subplots(2, 2, constrained_layout=True, 
-                           sharex='col', sharey ='row', height_ratios=[0.2, 1],
+fig, axarr  = plt.subplots(2, 1, constrained_layout=True, 
+                           sharex=True, height_ratios=[0.2, 1],
                           figsize=(5.5, 6.5))
-axarr[0, 0].plot(lon, DEM[ind_transect, :], color='tab:orange')
-axarr[0, 0].set_ylabel('height [m]')
+axarr[0].plot(lon, DEM[ind_transect, :], color='tab:orange')
+axarr[0].set_ylabel('height [m]')
 
-im = axarr[1, 0].imshow(rgb, extent=extent)
-axarr[1, 0].axhline(lat[ind_transect], color='tab:orange')
-axarr[1, 0].set_xlabel('lon [deg.]')
-axarr[1, 0].set_ylabel('lat [deg.]')
-
-axarr[0, 0].plot(lon, DEM[ind_transect, :], color='tab:orange')
-axarr[0, 0].set_ylabel('height [m]')
-
-im = axarr[1, 0].imshow(rgb, extent=extent)
-axarr[1, 0].axhline(lat[ind_transect], color='tab:orange')
-axarr[1, 0].set_xlabel('lon [deg.]')
-axarr[1, 0].set_ylabel('lat [deg.]')
-
+im = axarr[1].imshow(rgb, extent=extent)
+axarr[1].axhline(lat[ind_transect], color='tab:orange')
+axarr[1].set_xlabel('lon [deg.]')
+axarr[1].set_ylabel('lat [deg.]')
 plt.show()
 
 
-# In[10]:
+# In[4]:
 
 
 LON, LAT = np.meshgrid(lon, lat)
@@ -90,7 +80,7 @@ fig.show()
 # In[5]:
 
 
-wind_file = 'data/adaptor.mars.internal-1675099370.7887764-14315-8-262515c1-1605-461d-a45b-708ab30fbf0b.nc'
+wind_file = 'data/adaptor.mars.internal-1675349688.286735-15987-8-ca84ddee-dfc6-4f87-9947-b22957f5fbe9.nc'
 
 ds = Dataset(wind_file) 
 print(ds)
@@ -124,7 +114,7 @@ plt.show()
 # In[7]:
 
 
-wind_file = 'data/adaptor.mars.internal-1675177009.4463217-21782-15-592c31db-6078-402e-90b9-9e080b20c24f.nc'
+wind_file = 'data/adaptor.mars.internal-1675350208.1181304-19306-8-617ffd28-3a3f-4b5f-b823-b2147e507136.nc'
 
 ds = Dataset(wind_file) 
 print(ds)
@@ -154,4 +144,10 @@ axarr[0].set_ylabel('Vertical coordinate [km]')
 axarr[1].set_xlabel('Temperature [deg.]')
 
 plt.show()
+
+
+# In[ ]:
+
+
+
 
